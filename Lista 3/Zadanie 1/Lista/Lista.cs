@@ -1,24 +1,23 @@
-namespace Z1{
-    public class Element<T>{
-        public T value;
-        public Element<T>? next;
+namespace Lista
+{
+    public class Element<T>(T value)
+    {
+        public T value = value;
+        public Element<T>? next = null;
 
-        public Element<T>? previous;
-
-        public Element(T value){
-            this.value = value;
-            this.next = null;
-            this.previous = null;
-        }
+        public Element<T>? previous = null;
     }
 
-    public class Lista<T>{
+    public class Lista<T>
+    {
         protected Element<T>? head;
         protected Element<T>? tail;
 
-        public void push_front(T value){
-            Element<T> new_head = new Element<T>(value);
-            if(is_empty()){
+        public void PushFront(T value)
+        {
+            Element<T> new_head = new(value);
+            if(IsEmpty())
+            {
                 head = new_head;
                 tail = new_head;
                 return;
@@ -28,9 +27,11 @@ namespace Z1{
             head = new_head;
         }
 
-        public void push_back(T value){
-            Element<T> new_tail = new Element<T>(value);
-            if(is_empty()){
+        public void PushBack(T value)
+        {
+            Element<T> new_tail = new(value);
+            if(IsEmpty())
+            {
                 head = new_tail;
                 tail = new_tail;
                 return;
@@ -39,35 +40,43 @@ namespace Z1{
             new_tail.previous = tail;
             tail = new_tail;
         }
-
-        public T pop_front(){
-            if(is_empty()){
+        
+        public T PopFront()
+        {
+            if(IsEmpty())
+            {
                 throw new InvalidOperationException();
             }
+            
             T value = head!.value;
             Element<T>? new_head = head.next;
-            if(tail!.previous == head){
-                tail = head;
+            if(new_head == null)
+            {
+                tail = null;
             }
             head = new_head;
             return value;
         }
 
-        public T pop_back(){
-            if(is_empty()){
+        public T PopBack()
+        {
+            if(IsEmpty())
+            {
                 throw new InvalidOperationException();
             }
             T value = tail!.value;
             Element<T>? new_tail = tail.previous;
-            if(head!.next == tail){
-                head = tail;
+            if(new_tail == null)
+            {
+                head = null;
             }
             tail = new_tail;
             return value;
         }
 
-        public bool is_empty(){
-            if(head == null || tail == null) return true;
+        public bool IsEmpty()
+        {
+            if(head == null) return true;
             return false;
         }
     }
