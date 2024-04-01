@@ -1,3 +1,5 @@
+// Dominik Muc, 345952, Lista 3, Zadanie 1
+
 namespace Lista
 {
     public class Element<T>(T value)
