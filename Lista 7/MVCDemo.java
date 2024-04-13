@@ -12,7 +12,8 @@ public class MVCDemo {
 
         Car model = new Car(new Vehicle("Toyota", "Corolla", 5), 3, 120, EngineType.GASOLINE);
         CarView view = new CarView();
-        new CarController(model, view);
+        CarController controller = new CarController(model, view);
+        controller.initView();
         view.init();
         view.setVisible(true);
     }

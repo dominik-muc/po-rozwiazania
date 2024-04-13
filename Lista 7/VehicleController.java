@@ -10,7 +10,6 @@ public class VehicleController {
         this.model = model;
         this.view = view;
         this.view.addSaveButtonListener(new SaveEventListener());
-        initView();
     }
 
     public void initView() {
