@@ -1,5 +1,6 @@
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.*;
 
 public class VehicleController {
     private Vehicle model;
@@ -18,12 +19,20 @@ public class VehicleController {
         view.setAge(model.getAge());
     }
 
-    protected class SaveEventListener implements ActionListener {
+    public void updateModel(){
+        model.setProducent(view.getProducent());
+        model.setModel(view.getModel());
+        model.setAge(view.getAge());
+    }
+
+    class SaveEventListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-            model.setProducent(view.getProducent());
-            model.setModel(view.getModel());
-            model.setAge(view.getAge());
-            System.out.println(model.getProducent());
+            try {
+                updateModel();
+            } catch (Exception ex) {
+                JOptionPane.showMessageDialog(null, "Insert proper values.", "Error", JOptionPane.ERROR_MESSAGE);
+            }
+            
         }
     }
 }

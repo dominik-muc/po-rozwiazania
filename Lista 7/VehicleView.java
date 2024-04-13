@@ -3,13 +3,16 @@ import java.awt.*;
 import java.awt.event.ActionListener;
 
 public class VehicleView extends JFrame {
-    private JTextField producentField = new JTextField(10);
-    private JTextField modelField = new JTextField(10);
-    private JTextField ageField = new JTextField(10);
-    private JButton saveButton = new JButton("Save");
+    protected JTextField producentField = new JTextField(10);
+    protected JTextField modelField = new JTextField(10);
+    protected JTextField ageField = new JTextField(10);
+    protected JButton saveButton = new JButton("Save");
 
-    public VehicleView() {
-        super("Vehicle Editor");
+    public VehicleView(String title) {
+        super(title);
+    }
+
+    public void init(){
         setSize(300, 200);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 

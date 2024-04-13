@@ -1,4 +1,8 @@
-public class Vehicle {
+import java.io.Serializable;
+
+public class Vehicle implements Serializable{
+    private static final long serialVersionUID = 1L;
+
     protected String producent;
     protected String model;
     protected int age;
