@@ -1,3 +1,5 @@
+// Dominik Muc, 345952, Lista 7
+
 public class Car extends Vehicle {
     private static final long serialVersionUID = 2L;
 

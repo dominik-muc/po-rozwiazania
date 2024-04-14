@@ -1,3 +1,5 @@
+// Dominik Muc, 345952, Lista 7
+
 import java.io.Serializable;
 
 public class Vehicle implements Serializable{

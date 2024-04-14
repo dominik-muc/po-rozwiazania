@@ -1,3 +1,5 @@
+// Dominik Muc, 345952, Lista 7
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
@@ -15,6 +17,7 @@ public class VehicleView extends JFrame {
     public void init(){
         setSize(300, 200);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setLocationRelativeTo(null);
 
         JPanel panel = new JPanel(new GridLayout(4, 2));
         panel.add(new JLabel("Producent:"));

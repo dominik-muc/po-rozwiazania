@@ -1,3 +1,5 @@
+// Dominik Muc, 345952, Lista 7
+
 public class Tram extends Vehicle {
     private static final long serialVersionUID = 3L;
 

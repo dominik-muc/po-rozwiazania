@@ -1,6 +1,11 @@
+// Dominik Muc, 345952, Lista 7
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
+import java.io.IOException;
+import java.io.FileOutputStream;
+import java.io.ObjectOutputStream;
 
 public class VehicleController {
     private Vehicle model;
@@ -25,13 +30,24 @@ public class VehicleController {
     }
 
     class SaveEventListener implements ActionListener {
-        public void actionPerformed(ActionEvent e) {
+        public void actionPerformed(ActionEvent event) {
             try {
                 updateModel();
-            } catch (Exception ex) {
+                
+                try(FileOutputStream fileOut = new FileOutputStream(Editor.path);
+                    ObjectOutputStream objectOut = new ObjectOutputStream(fileOut)){
+             
+                    objectOut.writeObject(model);
+                } 
+                catch (IOException e) {
+                    System.out.println("An error occurred while writing the object to file.");
+                    e.printStackTrace();
+                    return;
+                }
+            }
+            catch (Exception e) {
                 JOptionPane.showMessageDialog(null, "Insert proper values.", "Error", JOptionPane.ERROR_MESSAGE);
             }
-            
         }
     }
 }

@@ -1,7 +1,4 @@
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import javax.swing.*;
-
+// Dominik Muc, 345952, Lista 7
 
 public class CarController extends VehicleController{
     protected Car carModel;
@@ -27,7 +24,6 @@ public class CarController extends VehicleController{
         carModel.setDoors(carView.getDoors());
         carModel.setEnginePower(carView.getEnginePower());
         carModel.setEngineType(carView.getEngineType());
-        System.err.println(carModel.enginePower);
     }
 }
 

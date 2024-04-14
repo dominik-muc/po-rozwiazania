@@ -1,3 +1,5 @@
+// Dominik Muc, 345952, Lista 7
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -11,11 +13,11 @@ public class CarView extends VehicleView{
     }
     @Override
     public void init(){
-        setSize(300, 200);
+        setSize(300, 250);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setLocationRelativeTo(null);
 
         JPanel panel = new JPanel(new GridLayout(7, 2));
-
         panel.add(new JLabel("Producent:"));
         panel.add(producentField);
 
